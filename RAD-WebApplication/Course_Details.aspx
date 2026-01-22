@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Details</title>
+
     <style>
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -13,266 +13,310 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
-            font-size: 16px;
-            padding-top: 20px;
         }
 
-        /* Header Styling */
         header {
             background-color: #003366;
-            color: #fff;
+            color: white;
             padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         header .container {
+            max-width: 1200px;
+            margin: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 0 20px;
         }
 
         header h1 {
-            font-size: 2.5em;
-            font-weight: bold;
-            letter-spacing: 2px;
+            font-size: 2.2em;
         }
 
-        header nav ul {
+        nav ul {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
 
-        header nav ul li {
-            display: inline;
-        }
-
-        header nav ul li a {
+        nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.3s ease;
         }
 
-        header nav ul li a:hover {
+        nav ul li a:hover {
             color: #ffcc00;
-            text-decoration: underline;
         }
 
-        /* Course List Section */
         .course-list {
             max-width: 1200px;
             margin: 40px auto;
-            padding: 20px;
-            background-color: #fff;
+            background: white;
+            padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .course-list h2 {
-            font-size: 2.5em;
-            color: #003366;
             text-align: center;
-            margin-bottom: 40px;
+            color: #003366;
+            margin-bottom: 30px;
         }
 
         .courses {
             display: flex;
-            flex-wrap: wrap;
             gap: 20px;
+            flex-wrap: wrap;
             justify-content: center;
         }
 
         .course-card {
-            width: 250px;
+            width: 260px;
+            background: #f9f9f9;
             padding: 20px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
             border-radius: 8px;
-            text-align: center;
+            border: 1px solid #ddd;
             cursor: pointer;
-            transition: all 0.3s ease;
+            text-align: center;
+            transition: 0.3s;
         }
 
         .course-card:hover {
-            background-color: #ffcc00;
+            background: #ffcc00;
             color: white;
         }
 
         .course-card h3 {
-            font-size: 1.5em;
             margin-bottom: 10px;
         }
 
-        .course-card p {
-            font-size: 1em;
-            color: #555;
-        }
-
-        /* Modal Styling */
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            inset: 0;
+            background: rgba(0,0,0,0.5);
             justify-content: center;
             align-items: center;
-            z-index: 10;
+            z-index: 100;
         }
 
         .modal-content {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
+            background: white;
+            width: 90%;
             max-width: 800px;
-            width: 100%;
+            padding: 30px;
+            border-radius: 8px;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
-        .modal h3 {
-            font-size: 2em;
+        .modal-content h3 {
             color: #003366;
+            margin-bottom: 15px;
         }
 
-        .modal p {
-            font-size: 1.2em;
+        .modal-content ul {
+            margin-left: 20px;
             margin-top: 10px;
         }
 
-        .modal button {
-            padding: 10px 20px;
-            background-color: #003366;
-            color: white;
+        .modal-buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 18px;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
             font-size: 1em;
+            cursor: pointer;
         }
 
-        .modal button:hover {
-            background-color: #005A9C;
+        .btn-enroll {
+            background: #28a745;
+            color: white;
         }
 
-        /* Footer Styling */
+        .btn-enroll:hover {
+            background: #218838;
+        }
+
+        .btn-close {
+            background: #003366;
+            color: white;
+        }
+
+        .btn-close:hover {
+            background: #005a9c;
+        }
+
         footer {
-            background-color: #222;
+            margin-top: 60px;
+            background: #222;
             color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 60px;
+            padding: 15px;
             font-size: 0.9em;
         }
 
-        footer a {
-            color: #ffcc00;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            header .container {
+        @media(max-width:768px) {
+            nav ul {
                 flex-direction: column;
                 text-align: center;
-            }
-
-            header nav ul {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .course-card {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .modal-content {
-                padding: 30px;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <h1>Uva Wellassa University</h1>
-            <nav>
+
+<header>
+    <div class="container">
+        <h1>Uva Wellassa University</h1>
+        <nav>
+            <ul>
+                <li><a href="Home.aspx">Home</a></li>
+                <li><a href="Student.aspx">Student Registration</a></li>
+                <li><a href="Course_Details.aspx">Course Details</a></li>
+                <li><a href="Enrollment.aspx">Enroll</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="course-list">
+    <h2>Available Courses</h2>
+
+    <div class="courses">
+
+        <div class="course-card" data-course="ICT101">
+            <h3>ICT101</h3>
+            <p>Introduction to Programming</p>
+        </div>
+
+        <div class="course-card" data-course="ICT205">
+            <h3>ICT205</h3>
+            <p>Web Application Development</p>
+        </div>
+
+        <div class="course-card" data-course="MGT210">
+            <h3>MGT210</h3>
+            <p>Business Management</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="courseModal" class="modal">
+    <div class="modal-content">
+        <h3 id="courseTitle"></h3>
+        <div id="courseDescription"></div>
+
+        <div class="modal-buttons">
+            <button class="btn btn-enroll" id="enrollBtn">Enroll Now</button>
+            <button class="btn btn-close" id="closeBtn">Close</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Uva Wellassa University | All Rights Reserved
+</footer>
+
+<script>
+    const courseData = {
+        'ICT101': {
+            title: 'ICT101 – Introduction to Programming',
+            description: `Duration: 1 Semester<br>Credits: 3<br>Semester: Year 1 – Semester 1<br><br>
+                <strong>Description:</strong><br>
+                This course introduces fundamental programming concepts and problem-solving techniques.<br><br>
+                <strong>Key Topics:</strong>
                 <ul>
-                    <li><a href="Home.aspx">Home</a></li>
-                    <li><a href="Student.aspx">Student Registration</a></li>
-                    <li><a href="Course_Details.aspx">Course Details</a></li>
-                    <li><a href="Enrollment.aspx">Enroll for Courses</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/academics">Academics</a></li>
-                    <li><a href="/admissions">Admissions</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Course List Section -->
-    <div class="course-list">
-        <h2>Available Courses</h2>
-        <div class="courses">
-            <!-- Course Card 1 -->
-            <div class="course-card" onclick="openModal('Course 1', 'This is a description of Course 1. It covers topics such as programming, software development, and project management.')">
-                <h3>Course 1</h3>
-                <p>Basic Programming</p>
-            </div>
-            <!-- Course Card 2 -->
-            <div class="course-card" onclick="openModal('Course 2', 'This course covers advanced topics in web development, including HTML, CSS, JavaScript, and React.')">
-                <h3>Course 2</h3>
-                <p>Web Development</p>
-            </div>
-            <!-- Course Card 3 -->
-            <div class="course-card" onclick="openModal('Course 3', 'A comprehensive course in business management, focusing on leadership, finance, and strategy.')">
-                <h3>Course 3</h3>
-                <p>Business Management</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Section (hidden by default) -->
-    <div id="courseModal" class="modal">
-        <div class="modal-content">
-            <h3 id="courseTitle">Course Title</h3>
-            <p id="courseDescription">Course description goes here...</p>
-            <button onclick="closeModal()">Close</button>
-        </div>
-    </div>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2026 Uva Wellassa University | All rights reserved.</p>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Function to open the modal and show the course details
-        function openModal(title, description) {
-            document.getElementById('courseTitle').innerText = title;
-            document.getElementById('courseDescription').innerText = description;
-            document.getElementById('courseModal').style.display = 'flex';
+                    <li>Algorithms & Flowcharts</li>
+                    <li>Variables & Data Types</li>
+                    <li>Control Structures</li>
+                    <li>Functions</li>
+                </ul>`
+        },
+        'ICT205': {
+            title: 'ICT205 – Web Application Development',
+            description: `Duration: 1 Semester<br>Credits: 3<br>Semester: Year 2 – Semester 1<br><br>
+                <strong>Description:</strong><br>
+                Focuses on modern web development using front-end and basic back-end concepts.<br><br>
+                <strong>Key Topics:</strong>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>Responsive Design</li>
+                    <li>Client-Server Model</li>
+                </ul>`
+        },
+        'MGT210': {
+            title: 'MGT210 – Business Management',
+            description: `Duration: 1 Semester<br>Credits: 2<br>Semester: Year 2 – Semester 2<br><br>
+                <strong>Description:</strong><br>
+                Introduces management principles and organizational behavior.<br><br>
+                <strong>Key Topics:</strong>
+                <ul>
+                    <li>Leadership</li>
+                    <li>Planning & Strategy</li>
+                    <li>Finance Basics</li>
+                    <li>Human Resource Management</li>
+                </ul>`
         }
+    };
 
-        // Function to close the modal
-        function closeModal() {
-            document.getElementById('courseModal').style.display = 'none';
+    let selectedCourseCode = "";
+
+    // Add event listeners to course cards
+    document.querySelectorAll('.course-card').forEach(card => {
+        card.addEventListener('click', function () {
+            const courseCode = this.getAttribute('data-course');
+            openModal(courseCode);
+        });
+    });
+
+    // Close button event
+    document.getElementById('closeBtn').addEventListener('click', closeModal);
+
+    // Enroll button event
+    document.getElementById('enrollBtn').addEventListener('click', enrollNow);
+
+    // Close modal when clicking outside
+    document.getElementById('courseModal').addEventListener('click', function (e) {
+        if (e.target === this) {
+            closeModal();
         }
-    </script>
+    });
+
+    function openModal(courseCode) {
+        const course = courseData[courseCode];
+        if (course) {
+            document.getElementById("courseTitle").innerText = course.title;
+            document.getElementById("courseDescription").innerHTML = course.description;
+            selectedCourseCode = courseCode;
+            document.getElementById("courseModal").style.display = "flex";
+        }
+    }
+
+    function closeModal() {
+        document.getElementById("courseModal").style.display = "none";
+    }
+
+    function enrollNow() {
+        window.location.href = "Enrollment.aspx?course=" + selectedCourseCode;
+    }
+</script>
+
 </body>
 </html>
