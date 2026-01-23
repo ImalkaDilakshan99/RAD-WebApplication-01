@@ -188,6 +188,7 @@
                 <li><a href="Course_Details.aspx">Course Details</a></li>
                 <li><a href="Enrollment.aspx">Enroll</a></li>
                 <li><a href="/contact">Contact</a></li>
+                <li><a href="Login.aspx">LogIn</a></li>
             </ul>
         </nav>
     </div>
