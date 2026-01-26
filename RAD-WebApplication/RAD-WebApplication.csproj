@@ -67,6 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Admin_Dashboard.aspx" />
+    <Content Include="Admin\Lecturer_Management.aspx" />
+    <Content Include="Admin\Students_Management.aspx" />
     <Content Include="Course_Details.aspx" />
     <Content Include="Enrollment.aspx" />
     <Content Include="Forget_Password.aspx" />
@@ -76,6 +79,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Admin_Dashboard.aspx.cs">
+      <DependentUpon>Admin_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_Dashboard.aspx.designer.cs">
+      <DependentUpon>Admin_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Lecturer_Management.aspx.cs">
+      <DependentUpon>Lecturer_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Lecturer_Management.aspx.designer.cs">
+      <DependentUpon>Lecturer_Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Students_Management.aspx.cs">
+      <DependentUpon>Students_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Students_Management.aspx.designer.cs">
+      <DependentUpon>Students_Management.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Course_Details.aspx.cs">
       <DependentUpon>Course_Details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
