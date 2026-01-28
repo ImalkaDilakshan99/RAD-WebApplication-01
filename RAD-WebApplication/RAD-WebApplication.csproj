@@ -74,6 +74,13 @@
     <Content Include="Enrollment.aspx" />
     <Content Include="Forget_Password.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="Lecturer\Assignments.aspx" />
+    <Content Include="Lecturer\Attendence.aspx" />
+    <Content Include="Lecturer\Lecture_Dashboard.aspx" />
+    <Content Include="Lecturer\Marks.aspx" />
+    <Content Include="Lecturer\Messages.aspx" />
+    <Content Include="Lecturer\My_Modules.aspx" />
+    <Content Include="Lecturer\Student_List.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="student.aspx" />
     <Content Include="Web.config" />
@@ -127,6 +134,55 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\Assignments.aspx.cs">
+      <DependentUpon>Assignments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\Assignments.aspx.designer.cs">
+      <DependentUpon>Assignments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\Attendence.aspx.cs">
+      <DependentUpon>Attendence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\Attendence.aspx.designer.cs">
+      <DependentUpon>Attendence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\Lecture_Dashboard.aspx.cs">
+      <DependentUpon>Lecture_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\Lecture_Dashboard.aspx.designer.cs">
+      <DependentUpon>Lecture_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\Marks.aspx.cs">
+      <DependentUpon>Marks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\Marks.aspx.designer.cs">
+      <DependentUpon>Marks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\Messages.aspx.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\Messages.aspx.designer.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\My_Modules.aspx.cs">
+      <DependentUpon>My_Modules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\My_Modules.aspx.designer.cs">
+      <DependentUpon>My_Modules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\Student_List.aspx.cs">
+      <DependentUpon>Student_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecturer\Student_List.aspx.designer.cs">
+      <DependentUpon>Student_List.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.aspx.cs">
