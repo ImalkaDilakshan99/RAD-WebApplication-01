@@ -83,6 +83,12 @@
     <Content Include="Lecturer\Student_List.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="student.aspx" />
+    <Content Include="Student\EnrollCourse.aspx" />
+    <Content Include="Student\MyCourses.aspx" />
+    <Content Include="Student\Profile.aspx" />
+    <Content Include="Student\Results.aspx" />
+    <Content Include="Student\Student-Dashboard.aspx" />
+    <Content Include="Student\TimeTable.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +204,48 @@
     </Compile>
     <Compile Include="student.aspx.designer.cs">
       <DependentUpon>student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\EnrollCourse.aspx.cs">
+      <DependentUpon>EnrollCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\EnrollCourse.aspx.designer.cs">
+      <DependentUpon>EnrollCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\MyCourses.aspx.cs">
+      <DependentUpon>MyCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\MyCourses.aspx.designer.cs">
+      <DependentUpon>MyCourses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Results.aspx.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Results.aspx.designer.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Student-Dashboard.aspx.cs">
+      <DependentUpon>Student-Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Student-Dashboard.aspx.designer.cs">
+      <DependentUpon>Student-Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\TimeTable.aspx.cs">
+      <DependentUpon>TimeTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\TimeTable.aspx.designer.cs">
+      <DependentUpon>TimeTable.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
